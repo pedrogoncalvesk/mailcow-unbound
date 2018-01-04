@@ -16,6 +16,8 @@ EXPOSE 53/udp 53/tcp
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
+RUN chmod +x /docker-entrypoint.sh
+
 COPY unbound.conf /etc/unbound/
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
